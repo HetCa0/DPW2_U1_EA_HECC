@@ -1,0 +1,148 @@
+/*ESTILOS GENERALES*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/*MENÚ DE NAVEGACIÓN*/
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #2f6b3c;
+}
+
+.menu a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: #24552f;
+}
+
+/*CONTENEDORES*/
+.contenedor {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+/* Página principal - pantalla grande */
+.tres-columnas {
+    grid-template-columns: 20% 50% 30%;
+}
+
+.columna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Logo y Entrada*/
+.imagen-principal {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/*TEXTO CENTRAL*/
+.columna h2 {
+    margin-top: 0;
+    color: #2f6b3c;
+}
+
+.columna p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/*PRODUCTOS (Más vendidos)*/
+.producto {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.producto h3 {
+    margin: 10px 0;
+    color: #2f6b3c;
+}
+
+/*FOOTER*/
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    gap: 15px;
+}
+
+.redes img {
+    width: 30px;
+    margin: 5px;
+}
+
+/*MEDIA QUERIES*/
+
+/* Pantalla MEDIANA */
+@media (max-width: 900px) {
+    .tres-columnas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imagen-principal {
+        height: 240px;
+    }
+}
+
+/* Pantalla PEQUEÑA */
+@media (max-width: 600px) {
+    .tres-columnas {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imagen-principal {
+        height: 200px;
+    }
+}
